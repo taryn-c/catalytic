@@ -1,7 +1,9 @@
+import 'package:catalytic/rewards_widget.dart';
 import 'package:flutter/material.dart';
 import 'calendar_widget.dart';
 import 'placeholder_widget.dart';
 import 'challenges_widget.dart';
+import 'rewards_widget.dart';
 
 class Home extends StatefulWidget {
 
@@ -21,7 +23,9 @@ class _HomeState extends State<Home> {
     Center(
       child: Calendar()
     ),
-    PlaceholderWidget(),
+    Center(
+        child: RewardList()
+    ),
     PlaceholderWidget()
   ];
 
