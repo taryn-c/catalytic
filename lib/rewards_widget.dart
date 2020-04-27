@@ -1,3 +1,4 @@
+import 'package:catalytic/dialogbox_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -32,21 +33,25 @@ class _RewardListState extends State<RewardList> {
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount( crossAxisCount: 2,),
                     children: snapshot.data.documents
                         .map<Widget>((DocumentSnapshot document) {
-                      return Card(
-                        child: new GridTile(
-
-                          child: Container(
-                            alignment: Alignment.topCenter,
-                            child: Padding(child: Image.network(document['photo'],),
-                              padding: EdgeInsets.all(10),
+                      return InkWell(
+                        onTap: (){
+                          showSimpleCustomDialog(context, document, 1);
+                        },
+                        child: Card(
+                          child: new GridTile(
+                            child: Container(
+                              alignment: Alignment.topCenter,
+                              child: Padding(child: Image.network(document['photo'],),
+                                padding: EdgeInsets.all(10),
+                              ),
                             ),
-                          ),
-                          footer: GridTileBar(
-                            title: new Text(document['name'],
-                              style: DefaultTextStyle.of(context).style.apply(),
-                            ),
-                            subtitle: new Text('Points: ' + document['points'].toString(),
-                              style: DefaultTextStyle.of(context).style.apply(),
+                            footer: GridTileBar(
+                              title: new Text(document['name'],
+                                style: DefaultTextStyle.of(context).style.apply(),
+                              ),
+                              subtitle: new Text('Points: ' + document['points'].toString(),
+                                style: DefaultTextStyle.of(context).style.apply(),
+                              ),
                             ),
                           ),
                         ),

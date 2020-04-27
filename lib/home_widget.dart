@@ -1,4 +1,5 @@
 import 'package:catalytic/rewards_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'calendar_widget.dart';
 import 'placeholder_widget.dart';
@@ -33,9 +34,15 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context)
+            .copyWith(canvasColor: Colors.transparent).canvasColor,
+        elevation: 0,
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Theme.of(context)
+            .copyWith(canvasColor: Colors.transparent).canvasColor,
+        elevation: 0,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -52,11 +59,11 @@ class _HomeState extends State<Home> {
           BottomNavigationBarItem(
             icon: Icon(Icons.people),
             title: Text('Friends'),
-            backgroundColor: Colors.blueGrey,
+            //backgroundColor: Colors.blueGrey,
           ),
         ],
         selectedItemColor: Colors.grey[900],
-        unselectedItemColor: Colors.blueGrey[200],
+        unselectedItemColor: Theme.of(context).accentColor,
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
@@ -67,6 +74,8 @@ class _HomeState extends State<Home> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
+              //padding: EdgeInsets.all(15),
+              margin: EdgeInsets.all(10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
@@ -75,10 +84,11 @@ class _HomeState extends State<Home> {
                     radius: 50,
                   ),
                   const Text(
-                    'Name Here',
+                    'Angelique',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 25,
+                      fontFamily: 'Satisfy',
                     ),
                   ),
                 ]

@@ -1,3 +1,4 @@
+import 'package:catalytic/dialogbox_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -36,11 +37,15 @@ class _ChallengeListState extends State<ChallengeList> {
                           subtitle: new Text('Points: ' + document['points'].toString()),
                           leading: IconButton(
                             icon: Icon(Icons.check_box_outline_blank),
-                            onPressed: () {},
+                            onPressed: () {
+                              showSimpleCustomDialog(context, document, 0);
+                            },
                           ),
                           trailing: IconButton(
                             icon: Icon(Icons.more_vert),
-                            onPressed: () {},
+                            onPressed: () {
+                              //showSimpleCustomDialog(context, document, 0);
+                            },
                           ),
                         ),
                       );
