@@ -32,7 +32,16 @@ class _ChallengeListState extends State<ChallengeList> {
                         .map<Widget>((DocumentSnapshot document) {
                       return Card(
                         child: new ListTile(
-                          title: new Text(document['title']),
+                          title: new Text(document['desc']),
+                          subtitle: new Text('Points: ' + document['points'].toString()),
+                          leading: IconButton(
+                            icon: Icon(Icons.check_box_outline_blank),
+                            onPressed: () {},
+                          ),
+                          trailing: IconButton(
+                            icon: Icon(Icons.more_vert),
+                            onPressed: () {},
+                          ),
                         ),
                       );
                     }).toList(),
