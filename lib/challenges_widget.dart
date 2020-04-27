@@ -1,4 +1,5 @@
 import 'package:catalytic/dialogbox_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -31,21 +32,27 @@ class _ChallengeListState extends State<ChallengeList> {
                   child: new ListView(
                     children: snapshot.data.documents
                         .map<Widget>((DocumentSnapshot document) {
-                      return Card(
-                        child: new ListTile(
-                          title: new Text(document['desc']),
-                          subtitle: new Text('Points: ' + document['points'].toString()),
-                          leading: IconButton(
-                            icon: Icon(Icons.check_box_outline_blank),
-                            onPressed: () {
-                              showSimpleCustomDialog(context, document, 0);
-                            },
-                          ),
-                          trailing: IconButton(
-                            icon: Icon(Icons.more_vert),
-                            onPressed: () {
-                              //showSimpleCustomDialog(context, document, 0);
-                            },
+                      return Opacity(
+                        opacity: 0.5,
+                        child: Card(
+                          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20,),
+//                        color: Theme.of(context)
+//                          .copyWith(canvasColor: Colors.transparent).canvasColor,
+                          child: new ListTile(
+                            title: new Text(document['desc']),
+                            subtitle: new Text('Points: ' + document['points'].toString()),
+                            leading: IconButton(
+                              icon: Icon(Icons.check_box_outline_blank),
+                              onPressed: () {
+                                showSimpleCustomDialog(context, document, 0);
+                              },
+                            ),
+                            trailing: IconButton(
+                              icon: Icon(Icons.more_vert),
+                              onPressed: () {
+                                //showSimpleCustomDialog(context, document, 0);
+                              },
+                            ),
                           ),
                         ),
                       );

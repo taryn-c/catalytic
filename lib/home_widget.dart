@@ -5,6 +5,7 @@ import 'calendar_widget.dart';
 import 'placeholder_widget.dart';
 import 'challenges_widget.dart';
 import 'rewards_widget.dart';
+import 'friends_widget.dart';
 
 class Home extends StatefulWidget {
 
@@ -27,7 +28,9 @@ class _HomeState extends State<Home> {
     Center(
         child: RewardList()
     ),
-    PlaceholderWidget()
+    Center(
+      child: FriendsWidget(),
+    ),
   ];
 
   @override
