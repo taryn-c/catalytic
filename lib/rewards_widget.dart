@@ -34,10 +34,20 @@ class _RewardListState extends State<RewardList> {
                         .map<Widget>((DocumentSnapshot document) {
                       return Card(
                         child: new GridTile(
-                          child: Image.network(document['photo']),
-                          header: GridTileBar(
-                            title: new Text(document['name']),
-                            subtitle: new Text('Points: ' + document['points'].toString()),
+
+                          child: Container(
+                            alignment: Alignment.topCenter,
+                            child: Padding(child: Image.network(document['photo'],),
+                              padding: EdgeInsets.all(10),
+                            ),
+                          ),
+                          footer: GridTileBar(
+                            title: new Text(document['name'],
+                              style: DefaultTextStyle.of(context).style.apply(),
+                            ),
+                            subtitle: new Text('Points: ' + document['points'].toString(),
+                              style: DefaultTextStyle.of(context).style.apply(),
+                            ),
                           ),
                         ),
                       );
