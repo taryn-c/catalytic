@@ -43,9 +43,7 @@ class _ChallengeListState extends State<ChallengeList> {
                             subtitle: new Text('Points: ' + document['points'].toString()),
                             leading: IconButton(
                               icon: Icon(Icons.check_box_outline_blank),
-                              onPressed: () {
-                                showSimpleCustomDialog(context, document, 0);
-                              },
+                              onPressed: () => showSimpleCustomDialog(context, document, 0),
                             ),
                             trailing: IconButton(
                               icon: Icon(Icons.more_vert),

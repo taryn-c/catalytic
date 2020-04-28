@@ -1,6 +1,7 @@
+import 'package:catalytic/group_tiles.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:catalytic/dialogbox_widget.dart';
+//import 'package:catalytic/dialogbox_widget.dart';
 import 'package:flutter/widgets.dart';
 
 final dbRef = Firestore.instance;
@@ -25,7 +26,13 @@ class _FriendsWidgetState extends State<FriendsWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Text('My Group'),
+              Text('My Groups',
+                style: TextStyle(
+                  //color: Colors.white,
+                  fontSize: 35,
+                  fontFamily: 'Satisfy',
+                ),
+              ),
               Container(
                 height: 200,
                 child: new FutureBuilder(
@@ -36,27 +43,26 @@ class _FriendsWidgetState extends State<FriendsWidget> {
                         children: <Widget>[
                           new Expanded(
                             child: new ListView(
-                              children: snapshot.data.documents
-                                  .map<Widget>((DocumentSnapshot document) {
-                                return Opacity(
-                                  opacity: 0.5,
-                                  child: Card(
-                                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20,),
-                                    //                        color: Theme.of(context)
-                                    //                          .copyWith(canvasColor: Colors.transparent).canvasColor,
-                                    child: new ListTile(
-                                      title: new Text(document['user1']),
-                                      //subtitle: new Text('Points: ' + document['points'].toString()),
-                                      trailing: IconButton(
-                                        icon: Icon(Icons.more_vert),
-                                        onPressed: () {
-                                          //showSimpleCustomDialog(context, document, 0);
-                                        },
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }).toList(),
+                              children: getUserList(snapshot.data.documents),
+//                                return Opacity(
+//                                  opacity: 0.5,
+//                                  child: Card(
+//                                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20,),
+//                                    //                        color: Theme.of(context)
+//                                    //                          .copyWith(canvasColor: Colors.transparent).canvasColor,
+//                                    child: new ListTile(
+//                                      title: new Text(document['user1']),
+//                                      //subtitle: new Text('Points: ' + document['points'].toString()),
+//                                      trailing: IconButton(
+//                                        icon: Icon(Icons.more_vert),
+//                                        onPressed: () {
+//                                          //showSimpleCustomDialog(context, document, 0);
+//                                        },
+//                                      ),
+//                                    ),
+//                                  ),
+//                                );
+                              //.toList(),
                             ),
                           ),
                         ],

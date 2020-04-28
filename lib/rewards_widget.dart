@@ -7,7 +7,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class RewardList extends StatefulWidget {
   @override
   _RewardListState createState() => _RewardListState();
-
 }
 
 class _RewardListState extends State<RewardList> {
@@ -38,6 +37,8 @@ class _RewardListState extends State<RewardList> {
                           showSimpleCustomDialog(context, document, 1);
                         },
                         child: Card(
+                          margin: EdgeInsets.only(left: 5, top: 10,right: 5),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0),),
                           child: new GridTile(
                             child: Container(
                               alignment: Alignment.topCenter,
