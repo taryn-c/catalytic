@@ -1,11 +1,11 @@
-import 'package:catalytic/rewards_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'calendar_widget.dart';
-import 'placeholder_widget.dart';
-import 'challenges_widget.dart';
-import 'rewards_widget.dart';
-import 'friends_widget.dart';
+import 'calendar_page.dart';
+import 'img_url.dart';
+import 'challenge_page.dart';
+//import 'rewards_widget.dart';
+import 'friends_page.dart';
+import 'reward_page.dart';
 
 class Home extends StatefulWidget {
 
@@ -20,27 +20,27 @@ class _HomeState extends State<Home> {
 
   final List<Widget> _children = [
     Center(
-      child: ChallengeList()
+      child: ChallengePage(),
     ),
     Center(
-      child: Calendar()
+      child: CalendarPage(),
     ),
     Center(
-        child: RewardList()
+        child: RewardPage(),
     ),
     Center(
-      child: FriendsWidget(),
+      child: FriendPage(),
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context)
-            .copyWith(canvasColor: Colors.transparent).canvasColor,
-        elevation: 0,
-      ),
+//      appBar: AppBar(
+//        backgroundColor: Theme.of(context)
+//            .copyWith(canvasColor: Colors.transparent).canvasColor,
+//        elevation: 0,
+//      ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Theme.of(context)
@@ -83,7 +83,7 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   new CircleAvatar(
-                    backgroundImage: NetworkImage('https://images.pexels.com/photos/862848/pexels-photo-862848.jpeg?auto=compress&cs=tinysrgb&h=350',),
+                    backgroundImage: NetworkImage(user,),
                     radius: 50,
                   ),
                   const Text(

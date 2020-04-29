@@ -2,8 +2,6 @@ import 'package:catalytic/dialogbox_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-
-
 class RewardList extends StatefulWidget {
   @override
   _RewardListState createState() => _RewardListState();

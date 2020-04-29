@@ -84,19 +84,22 @@ class _CalendarState extends State<Calendar> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          // Switch out 2 lines below to play with TableCalendar's settings
-          //-----------------------
-          _buildTableCalendar(),
-          // _buildTableCalendarWithBuilders(),
-          const SizedBox(height: 8.0),
-          _buildButtons(),
-          const SizedBox(height: 8.0),
-          Expanded(child: _buildEventList()),
-        ],
+    return Card(
+      margin: EdgeInsets.symmetric(vertical: 30, horizontal: 20,),
+      child: Container(
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            // Switch out 2 lines below to play with TableCalendar's settings
+            //-----------------------
+            _buildTableCalendar(),
+            // _buildTableCalendarWithBuilders(),
+            const SizedBox(height: 8.0),
+            //_buildButtons(),
+            const SizedBox(height: 8.0),
+            Expanded(child: _buildEventList()),
+          ],
+        ),
       ),
     );
   }

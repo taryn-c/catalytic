@@ -20,30 +20,27 @@ class _FriendsWidgetState extends State<FriendsWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Card(
-          margin: EdgeInsets.symmetric(vertical: 15, horizontal: 20,),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0),),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Text('My Groups',
-                style: TextStyle(
-                  //color: Colors.white,
-                  fontSize: 35,
-                  fontFamily: 'Satisfy',
-                ),
-              ),
-              Container(
-                height: 200,
-                child: new FutureBuilder(
-                  future: getGroups(),
-                  builder: (BuildContext context, AsyncSnapshot snapshot){
-                    if(snapshot.data != null) {
-                      return new Column(
-                        children: <Widget>[
-                          new Expanded(
-                            child: new ListView(
-                              children: getUserList(snapshot.data.documents),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+//              Text('My Groups',
+//                style: TextStyle(
+//                  //color: Colors.white,
+//                  fontSize: 35,
+//                  fontFamily: 'Satisfy',
+//                ),
+//              ),
+            Container(
+              height: 200,
+              child: new FutureBuilder(
+                future: getGroups(),
+                builder: (BuildContext context, AsyncSnapshot snapshot){
+                  if(snapshot.data != null) {
+                    return new Column(
+                      children: <Widget>[
+                        new Expanded(
+                          child: new ListView(
+                            children: getUserList(snapshot.data.documents),
 //                                return Opacity(
 //                                  opacity: 0.5,
 //                                  child: Card(
@@ -62,20 +59,19 @@ class _FriendsWidgetState extends State<FriendsWidget> {
 //                                    ),
 //                                  ),
 //                                );
-                              //.toList(),
-                            ),
+                            //.toList(),
                           ),
-                        ],
-                      );
-                    } else {
-                      return new CircularProgressIndicator();
-                    }
-                  }, // Anon function
-                ),
-              )
-            ],
-          ),
-      ),
+                        ),
+                      ],
+                    );
+                  } else {
+                    return new CircularProgressIndicator();
+                  }
+                }, // Anon function
+              ),
+            )
+          ],
+        ),
     );
   }
 }
