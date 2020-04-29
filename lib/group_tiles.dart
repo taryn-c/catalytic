@@ -7,8 +7,6 @@ Widget getTiles(MapEntry field) {
     opacity: 0.5,
     child: Card(
       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20,),
-      //                        color: Theme.of(context)
-      //                          .copyWith(canvasColor: Colors.transparent).canvasColor,
       child: new ListTile(
         title: new Text(field.value),
         //subtitle: new Text('Points: ' + document['points'].toString()),

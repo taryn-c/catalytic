@@ -8,11 +8,9 @@ final dbRef = Firestore.instance;
 class ChallengeList extends StatefulWidget {
   @override
   _ChallengeListState createState() => _ChallengeListState();
-
 }
 
 class _ChallengeListState extends State<ChallengeList> {
-
   Future getChallenges() async {
     QuerySnapshot qs = await dbRef.collection('challenges').getDocuments();
     return qs; //array of document snapshots
@@ -60,7 +58,7 @@ class _ChallengeListState extends State<ChallengeList> {
               ],
             );
           } else {
-            return new CircularProgressIndicator();
+            return Center(child: new CircularProgressIndicator());
           }
         }, // Anon function
       ),

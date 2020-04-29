@@ -12,15 +12,13 @@ class RewardPage extends StatefulWidget {
 class _RewardPageState extends State<RewardPage> {
   @override
   Widget build(BuildContext context) {
-    //final screenHeight = MediaQuery.of(context).size.height;
+
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
       child: Column(
         children: <Widget>[
           Expanded(
-            //width: screenWidth,
-            //height: screenHeight * 0.3,
             flex: 2,
             child: Image.network(challenge_header, width: screenWidth, fit: BoxFit.fitWidth,),
           ),
@@ -31,13 +29,6 @@ class _RewardPageState extends State<RewardPage> {
                 child: RewardList()
             ),
           ),
-//          Expanded(
-//            flex: 3,
-//            child: Container(
-//              color: Colors.blue,
-//
-//            ),
-//          ),
         ],
       ),
     );

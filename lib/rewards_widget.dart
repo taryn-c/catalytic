@@ -61,7 +61,7 @@ class _RewardListState extends State<RewardList> {
               ],
             );
           } else {
-            return new CircularProgressIndicator();
+            return Center(child: new CircularProgressIndicator());
           }
         }, // Anon function
       ),

@@ -18,9 +18,6 @@ class _FriendPageState extends State<FriendPage> {
       child: Column(
         children: <Widget>[
           Expanded(
-            //width: screenWidth,
-            //height: screenHeight * 0.3,
-            flex: 10,
             child: Stack(
               children: <Widget> [
                 Image.network(challenge_header, width: screenWidth, fit: BoxFit.fitWidth,),
@@ -48,14 +45,7 @@ class _FriendPageState extends State<FriendPage> {
                                       padding: EdgeInsets.symmetric(vertical: 10),
                                     ),
                                     Expanded(
-                                      //flex: 10,
-                                        child: Row(
-                                          children: <Widget>[
-                                            Expanded(
-                                                child: FriendsWidget()
-                                            ),
-                                          ],
-                                        )
+                                        child: FriendsWidget()
                                     ),
                                   ]
                               )
@@ -81,8 +71,6 @@ class _FriendPageState extends State<FriendPage> {
                                   ),
                                   Expanded(
                                     child: Row(
-
-
                                     ),
                                   ),
                                 ],

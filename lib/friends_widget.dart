@@ -23,13 +23,6 @@ class _FriendsWidgetState extends State<FriendsWidget> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-//              Text('My Groups',
-//                style: TextStyle(
-//                  //color: Colors.white,
-//                  fontSize: 35,
-//                  fontFamily: 'Satisfy',
-//                ),
-//              ),
             Container(
               height: 200,
               child: new FutureBuilder(
@@ -65,7 +58,7 @@ class _FriendsWidgetState extends State<FriendsWidget> {
                       ],
                     );
                   } else {
-                    return new CircularProgressIndicator();
+                    return Center(child: new CircularProgressIndicator());
                   }
                 }, // Anon function
               ),

@@ -18,16 +18,12 @@ class _ChallengePageState extends State<ChallengePage> {
       child: Column(
         children: <Widget>[
           Expanded(
-            //width: screenWidth,
-            //height: screenHeight * 0.3,
-            //flex: 10,
             child: Stack(
                 children: <Widget> [
                   Image.network(challenge_header, width: screenWidth, fit: BoxFit.fitWidth,),
                   Positioned.fill(
                     top: screenHeight * 0.10,
                     child: SizedBox(
-                      //height: screenHeight * .90,
                       child: Column(
                         children: <Widget>[
                           Expanded(
@@ -48,7 +44,6 @@ class _ChallengePageState extends State<ChallengePage> {
                                           padding: EdgeInsets.symmetric(vertical: 10),
                                       ),
                                       Expanded(
-                                          //flex: 10,
                                           child: ChallengeList()
                                       ),
                                 ]
