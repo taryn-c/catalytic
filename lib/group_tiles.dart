@@ -14,7 +14,6 @@ Widget getTiles(MapEntry field) {
           icon: Icon(Icons.more_vert),
           onPressed: () {
             //showSimpleCustomDialog(context, document, 0);
-
           },
         ),
       ),

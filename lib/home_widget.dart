@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 import 'calendar_page.dart';
 import 'img_url.dart';
 import 'challenge_page.dart';
-//import 'rewards_widget.dart';
 import 'friends_page.dart';
 import 'reward_page.dart';
 
 class Home extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() {
     return _HomeState();
