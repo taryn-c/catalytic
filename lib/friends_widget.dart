@@ -32,6 +32,7 @@ class _FriendsWidgetState extends State<FriendsWidget> {
                   children: <Widget>[
                     new Expanded(
                       child: new ListView(
+                        padding: EdgeInsets.all(0),
                         children: getUserList(snapshot.data.documents),
                       ),
                     ),

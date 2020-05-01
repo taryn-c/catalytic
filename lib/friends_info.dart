@@ -31,18 +31,23 @@ class _FriendsImgWidgetState extends State<FriendsImgWidget> {
             return new Row(
               children: snapshot.data.documents
                   .map<Widget>((DocumentSnapshot document) {
-                return new Container(
-                    margin: EdgeInsets.all(10),
-                    width: 150.0,
-                    height: 150.0,
-                    decoration: new BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: new DecorationImage(
-                            fit: BoxFit.fill,
-                            image: new NetworkImage(
-                                document['photo'])
+                return Column(
+                  children: <Widget>[
+                    new Container(
+                        margin: EdgeInsets.all(10),
+                        width: 125.0,
+                        height: 125.0,
+                        decoration: new BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: new DecorationImage(
+                                fit: BoxFit.cover,
+                                image: new NetworkImage(
+                                    document['photo'])
+                            )
                         )
-                    )
+                    ),
+                    Text(document['first'], textAlign: TextAlign.center,),
+                  ],
                 );
               }).toList(),
             );

@@ -28,6 +28,7 @@ class _ChallengeListState extends State<ChallengeList> {
               children: <Widget>[
                 new Expanded(
                   child: new ListView(
+                    padding: EdgeInsets.all(0),
                     children: snapshot.data.documents
                         .map<Widget>((DocumentSnapshot document) {
                       return Opacity(
