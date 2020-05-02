@@ -19,30 +19,36 @@ class _RewardPageState extends State<RewardPage> {
     return Container(
       child: Column(
         children: <Widget>[
-          Stack(
-            children: <Widget>[
-              Image.network(challenge_header, width: screenWidth, fit: BoxFit.fitWidth,),
-              Positioned.fill(
-                top: screenHeight * 0.10,
-                child: SizedBox(
-                  //height: screenHeight,
-                  child: Column(
-                    children: <Widget>[
-                      Card(
-                          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30,),
-                          child: Column(
-                            //mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              HeadingWidget(heading: 'Rewards',),
-                              RewardList(),
-                            ],
-                          )
-                      ),
-                    ],
+          Expanded(
+            child: Stack(
+              children: <Widget>[
+                Image.network(challenge_header, width: screenWidth, fit: BoxFit.fitWidth,),
+                Positioned.fill(
+                  top: screenHeight * 0.10,
+                  child: SizedBox(
+                    //height: screenHeight,
+                    child: Column(
+                      children: <Widget>[
+                        Expanded(
+                          flex: 10,
+                          child: Card(
+                              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30,),
+                              child: Column(
+                                //mainAxisSize: MainAxisSize.min,
+                                children: <Widget>[
+                                  HeadingWidget(heading: 'Rewards',),
+                                  RewardList(),
+                                ],
+                              )
+                          ),
+                        ),
+                        
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
